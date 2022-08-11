@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: public # this is the source_name
+    database: dbt_data
+
+    tables:
+      - name: CovidVaxProvider # this is the table_name
+      - name: ProviderInfo

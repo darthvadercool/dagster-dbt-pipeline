@@ -1,0 +1,50 @@
+[32m2022-07-31 03:05:57 +0530[0m - dagster - [34mDEBUG[0m - dbt_job - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - 37625 - dbt_run - LOGS_CAPTURED - Started capturing logs for step: dbt_run.
+[32m2022-07-31 03:05:57 +0530[0m - dagster - [34mDEBUG[0m - dbt_job - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - 37625 - dbt_run - STEP_START - Started execution of step "dbt_run".
+[32m2022-07-31 03:05:57 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - Executing command: dbt --no-use-color --log-format json run --project-dir /home/kshitij/Workplace/pipeline_project/dbt_data_pipe/ --profiles-dir /home/kshitij/.dbt/
+[32m2022-07-31 03:05:59 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - Running with dbt=1.1.1
+[32m2022-07-31 03:05:59 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - Found 5 models, 9 tests, 0 snapshots, 0 analyses, 167 macros, 0 operations, 0 seed files, 2 sources, 0 exposures, 0 metrics
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - Concurrency: 1 threads (target='dev')
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 1 of 5 START view model public.stg_covidvaxprovider__PersonnelVaxData .......... [RUN]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 1 of 5 OK created view model public.stg_covidvaxprovider__PersonnelVaxData ..... [CREATE VIEW in 0.07s]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 2 of 5 START view model public.stg_providerinfo__HospitalQuality ............... [RUN]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 2 of 5 OK created view model public.stg_providerinfo__HospitalQuality .......... [CREATE VIEW in 0.04s]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 3 of 5 START table model public.dim_personnel_data_cleansed .................... [RUN]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 3 of 5 OK created table model public.dim_personnel_data_cleansed ............... [SELECT 15190 in 0.09s]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 4 of 5 START table model public.dim_hospital_quality_cleansed .................. [RUN]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 4 of 5 OK created table model public.dim_hospital_quality_cleansed ............. [SELECT 15190 in 0.09s]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 5 of 5 START table model public.analytics_quality_versus_personnel ............. [RUN]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - 5 of 5 OK created table model public.analytics_quality_versus_personnel ........ [SELECT 15190 in 0.13s]
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - Finished running 2 view models, 3 table models in 0.57s.
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - Completed successfully
+[32m2022-07-31 03:06:00 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[32m2022-07-31 03:06:02 +0530[0m - dagster - [34mINFO[0m - resource:dbt - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - dbt_run - dbt exited with return code 0
+[32m2022-07-31 03:06:02 +0530[0m - dagster - [34mDEBUG[0m - dbt_job - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - 37625 - dbt_run - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2022-07-31 03:06:02 +0530[0m - dagster - [34mERROR[0m - [31mdbt_job - d9d6dd59-a411-4776-b1f0-b3c04a8f7c91 - 37625 - dbt_run - STEP_FAILURE - Execution of step "dbt_run" failed.
+
+dagster.core.errors.DagsterInvariantViolationError: Object [<dagster.core.definitions.assets.AssetsDefinition object at 0x7fd474ecb310>] is not picklable. You are currently using the fs_io_manager and the multi_or_in_process_executor. You will need to use a different io manager to continue using this output. For example, you can use the mem_io_manager with the in_process_executor.
+For more information on io managers, visit https://docs.dagster.io/concepts/io-management/io-managers 
+For more information on executors, vist https://docs.dagster.io/deployment/executors#overview
+
+Stack Trace:
+  File "/home/kshitij/Workplace/pipeline_project/env/lib/python3.9/site-packages/dagster/core/execution/plan/execute_plan.py", line 224, in dagster_event_sequence_for_step
+    for step_event in check.generator(step_events):
+  File "/home/kshitij/Workplace/pipeline_project/env/lib/python3.9/site-packages/dagster/core/execution/plan/execute_step.py", line 363, in core_dagster_event_sequence_for_step
+    for evt in _type_check_and_store_output(step_context, user_event, input_lineage):
+  File "/home/kshitij/Workplace/pipeline_project/env/lib/python3.9/site-packages/dagster/core/execution/plan/execute_step.py", line 420, in _type_check_and_store_output
+    for evt in _store_output(step_context, step_output_handle, output, input_lineage):
+  File "/home/kshitij/Workplace/pipeline_project/env/lib/python3.9/site-packages/dagster/core/execution/plan/execute_step.py", line 564, in _store_output
+    for elt in iterate_with_context(
+  File "/home/kshitij/Workplace/pipeline_project/env/lib/python3.9/site-packages/dagster/utils/__init__.py", line 406, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/kshitij/Workplace/pipeline_project/env/lib/python3.9/site-packages/dagster/core/execution/plan/execute_step.py", line 554, in _gen_fn
+    gen_output = output_manager.handle_output(output_context, output.value)
+  File "/home/kshitij/Workplace/pipeline_project/env/lib/python3.9/site-packages/dagster/core/storage/fs_io_manager.py", line 151, in handle_output
+    raise DagsterInvariantViolationError(
+
+The above exception was caused by the following exception:
+AttributeError: Can't pickle local object '_get_dbt_op.<locals>._dbt_op'
+
+Stack Trace:
+  File "/home/kshitij/Workplace/pipeline_project/env/lib/python3.9/site-packages/dagster/core/storage/fs_io_manager.py", line 140, in handle_output
+    pickle.dump(obj, write_obj, PICKLE_PROTOCOL)
+[0m

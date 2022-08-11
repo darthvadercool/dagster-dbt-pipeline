@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_providerinfo__HospitalQuality
+    columns:
+      
+      - name: provider_number
+        tests:
+          - unique
+          - not_null
+      - name: provider_name 
+      - name: provider_address
+      - name : provider_city
+      - name : zip_code
+
+
+  - name: stg_covidvaxprovider__PersonnelVaxData
+    columns:
+      
+      - name: percent_vax_res
+        

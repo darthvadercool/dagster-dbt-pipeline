@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: analytics_quality_versus_personnel
+    columns:
+      
+      - name: provider_number
+        tests:
+          - unique
+          - not_null
+      - name: provider_name
+      - name: provider_address 
+      - name: provider_city
+      - name: provider_state  
+      - name: zip_code
+      - name: contact_number  
+      - name: county_code
+      - name: county_name  
+      - name: ownership_type
+      - name: overall_rating  
+      - name: rc1_health_score
+      - name: rc2_health_score  
+      - name: rc3_health_score
+      - name: total_health_score  
+      - name: total_penalties
+      - name: location  
+      - name: percent_vax_res
+      - name: percent_vax_h_res
+      - name: percent_res_with_booster
+      - name: percent_h_res_with_booster
+         
+
+
+
+    

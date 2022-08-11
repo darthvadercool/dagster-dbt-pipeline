@@ -1,0 +1,12 @@
+For profit - Corporation
+For profit - Individual
+For profit - partnership
+For profit - Limited Liability company
+Non profit - Corporation
+Non profit - Other
+Non profit - Church related
+Government - County
+Government - City
+Government - Federal
+Government - State
+

@@ -1,0 +1,7 @@
+"Federal Provider Number",
+"Provider State",
+"Percent Vaccinated Residents",
+"Percent Vaccinated Healthcare Personnel",
+"Percent of Fully Vaccinated Residents who Received a Booster Dose",
+"Percent of Fully Vaccinated Staff who Received a Booster Dose",
+"Date vaccination data last updated"

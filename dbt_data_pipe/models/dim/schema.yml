@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_hospital_quality_cleansed
+    columns:
+      
+      - name: provider_number
+        tests:
+          - unique
+          - not_null
+      
+
+    
+  - name: dim_personnel_data_cleansed
+    columns:
+      
+      - name: provider_id
+        tests:
+          - unique
+          - not_null 
+          - relationships:
+              to: ref('dim_hospital_quality_cleansed')  
+              field: provider_number       
+      - name: last_updated
+        tests:
+          - not_null        

@@ -1,0 +1,1 @@
+dbt --no-use-color --log-format json run --project-dir /home/kshitij/Workplace/pipeline_project/dbt_data_pipe/ --profiles-dir /home/kshitij/.dbt/
