@@ -6,10 +6,7 @@ from dagster_pipe.ops.dbt import dbt_run
 
 
 
-my_dbt_resource = dbt_cli_resource.configured(
-    {"project_dir": "/home/kshitij/Workplace/pipeline_project/dbt_data_pipe/",
-     "profiles_dir": "/home/kshitij/.dbt/"}
-)
+
 
 @op(
     ins={"source1": In(Nothing), "source2": In(Nothing)},

@@ -166,3 +166,7 @@ venv/
 env/
 test.env
 __pycache__
+
+
+dbt_output_logs.json
+dbt_output_result.json

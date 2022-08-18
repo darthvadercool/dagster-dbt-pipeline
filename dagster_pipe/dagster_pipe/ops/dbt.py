@@ -1,47 +1,53 @@
-from dagster import  Output, op, AssetMaterialization, repository, AssetKey, Nothing, Out
+from dagster import  Output, op,  AssetMaterialization, repository, AssetKey, Nothing, Out, In
 
-from dagster_dbt import load_assets_from_dbt_project, dbt_run_op
+from dagster_dbt import load_assets_from_dbt_project, dbt_run_op, DbtCliOutput
 from dagster_dbt.utils import generate_materializations
 import json
 
 
 
-dbt_assets = load_assets_from_dbt_project(project_dir = "/home/kshitij/Workplace/pipeline_project/dbt_data_pipe/",
-    profiles_dir="/home/kshitij/.dbt/"
-    )
+@op(
+    ins={"source1": In(Nothing), "source2": In(Nothing)},
+    required_resource_keys={"dbt"},
+    out=Out(Nothing),
+    tags={"kind": "dbt"},
+)
 
-
-@op(out=Out(Nothing),required_resource_keys={"dbt"})
+# @op(out=Out(Nothing),required_resource_keys={"dbt"})
 def dbt_run(context):
     dbt_output = context.resources.dbt.run()
     
-
-
     x = dbt_output.result['results']
     a= x[1]
 
     print (a['unique_id'])
+    for i in x:
+        print (i['unique_id'])
 
-    print (len(x))
-    print (x[1])
-
-
-
-    #iterate over results_json
-    # print (dbt_output.result['results'])
-    # for keys in dbt_output.result['results']:
-    #     print (keys)
-    i=0
-    for keys in x:
-        print (keys)
-        # yield AssetMaterialization(
-        # asset_key=AssetKey('x[i].['unique_id']')
+        yield AssetMaterialization(
+            asset_key=AssetKey(i['unique_id'])
         
-        # )
-        # i = i+1
+        )
+    # print (len(x))
+    # print (x[1])
+
+
+
+    # #iterate over results_json
+    # # print (dbt_output.result['results'])
+    # # for keys in dbt_output.result['results']:
+    # #     print (keys)
+    # i=0
+    # for keys in x:
+    #     print (keys)
+    #     # yield AssetMaterialization(
+    #     # asset_key=AssetKey('x[i].['unique_id']')
+        
+    #     # )
+    #     # i = i+1
         
    
-    return Nothing
+    # return Nothing
 
     
 
