@@ -36,7 +36,7 @@ there is also a profiles.yml in dbt_data_pipe/ folder. The path to that profiles
 #### dagster 
 In the dagster projects, in /jobs/file_jobs.py | repository.py, change DBT_PROJECT_DIR and DBT_PROFILES_DIR to path as per the system location on your laptop. 
 
-Also keep the csvs in dataset/ folder with names ProviderInfo.csv and CovidVaxProvider.csv. Though dagster will read and make tables accordingly but the dbt project models are wired to tables with specific names. Specify the path of csvs in ops/file_operations.py accordingly. There is a bit of hardcoding that will be updated.
+Also keep the csvs in dataset/ folder with names ProviderInfo.csv and CovidVaxProvider.csv. Though dagster will read and make tables accordingly but the dbt project models are wired to tables with specific names. Specify the path of csvs in ops/file_operations.py accordingly. There is a bit of hardcoding that will be updated.The datasets are also given in the repo.
 
 
 
