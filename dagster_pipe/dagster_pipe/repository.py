@@ -4,16 +4,18 @@ from dagster import repository, with_resources, define_asset_job, load_assets_fr
 from dagster_dbt import load_assets_from_dbt_project
 
 
-from dagster_pipe.jobs.dbt_transform import dbt_job, dbt_cli_resource
-from dagster_pipe.jobs.file_jobs import local_job
-from dagster_pipe import assets
+from .jobs.dbt_transform import dbt_job, dbt_cli_resource
+from .jobs.file_jobs import local_job
+from . import assets
+from .utils.constants import DBT_CONFIG, DBT_PROJECT_DIR, DBT_PROFILES_DIR
 
 
 
 
-DBT_PROJECT_DIR = "/home/kshitij/Workplace/pipeline_project/dbt_data_pipe/"
-DBT_PROFILES_DIR = "/home/kshitij/.dbt/"
-
+# DBT_PROJECT_DIR = "/home/kshitij/Workplace/pipeline_project/dbt_data_pipe/"
+# DBT_PROFILES_DIR = "/home/kshitij/.dbt/"
+print (DBT_PROJECT_DIR)
+print (DBT_PROFILES_DIR)
 dbt_assets = load_assets_from_dbt_project(
     DBT_PROJECT_DIR, 
     DBT_PROFILES_DIR,
@@ -37,9 +39,7 @@ def dagster_pipe():
 
     return with_resources(
         dbt_assets + raw_data_assets,
-        resource_defs={"dbt": dbt_cli_resource.configured(
-                {"project_dir": DBT_PROJECT_DIR, "profiles_dir": DBT_PROFILES_DIR}
-            )  
+        resource_defs={"dbt": dbt_cli_resource.configured(DBT_CONFIG)  
         },
 
         ) + [local_job] +[everything_job]
