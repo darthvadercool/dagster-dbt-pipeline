@@ -23,7 +23,7 @@ def ProviderInfo():
     
  
     files =  path
-    print (files)
+   
     x = (os.path.basename(files))
     try:
         lgr = logging.getLogger('console_logger')
@@ -32,14 +32,14 @@ def ProviderInfo():
         lgr.error(df)
     except Exception as e:
         print("Data extract error: " + str(e))          	
-    print ("kshitij1")
+  
     try:
         
         engine = get_postgres_conn()
         lgr.info(df.head())
-        print ("kshitij3")
+        
         df.to_sql(x[:-4], engine, schema='public', index=False, if_exists='replace')
-        print ("kshitij4")
+        
         #print (x[:-4])
         #context.log.info(df.head())
         lgr.error(df.head())

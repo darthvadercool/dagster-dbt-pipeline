@@ -12,10 +12,7 @@ from .utils.constants import DBT_CONFIG, DBT_PROJECT_DIR, DBT_PROFILES_DIR
 
 
 
-# DBT_PROJECT_DIR = "/home/kshitij/Workplace/pipeline_project/dbt_data_pipe/"
-# DBT_PROFILES_DIR = "/home/kshitij/.dbt/"
-print (DBT_PROJECT_DIR)
-print (DBT_PROFILES_DIR)
+
 dbt_assets = load_assets_from_dbt_project(
     DBT_PROJECT_DIR, 
     DBT_PROFILES_DIR,

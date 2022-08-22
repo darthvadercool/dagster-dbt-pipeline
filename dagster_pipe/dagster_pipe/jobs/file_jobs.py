@@ -8,12 +8,11 @@ from dagster_pipe.ops.ingest import fetch_data, ingest_data_to_postgres
 from dagster_pipe.jobs.dbt_transform import dbt_job
 from dagster_pipe.ops.dbt import dbt_run
 
+from dagster_pipe.utils.constants import DBT_CONFIG
 
 
-my_dbt_resource = dbt_cli_resource.configured(
-    {"project_dir": "/home/kshitij/Workplace/pipeline_project/dbt_data_pipe/",
-     "profiles_dir": "/home/kshitij/.dbt/"}
-)
+
+my_dbt_resource = dbt_cli_resource.configured(DBT_CONFIG)
 
 
 
