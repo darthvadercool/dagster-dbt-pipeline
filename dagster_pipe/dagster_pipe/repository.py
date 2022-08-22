@@ -1,4 +1,4 @@
-from dagster import repository, with_resources, define_asset_job
+from dagster import repository, with_resources, define_asset_job, load_assets_from_package_module
 
 
 from dagster_dbt import load_assets_from_dbt_project
@@ -6,7 +6,7 @@ from dagster_dbt import load_assets_from_dbt_project
 
 from dagster_pipe.jobs.dbt_transform import dbt_job, dbt_cli_resource
 from dagster_pipe.jobs.file_jobs import local_job
-
+from dagster_pipe import assets
 
 
 
@@ -21,6 +21,13 @@ dbt_assets = load_assets_from_dbt_project(
     source_key_prefix=["dbt_data"],
     )
 
+raw_data_assets = load_assets_from_package_module(
+    assets,
+    group_name="raw_data",
+    key_prefix=["dbt_data", "public"],
+  
+)
+
 everything_job = define_asset_job("every_dbt_asset_run", selection="*")
 
 
@@ -29,7 +36,7 @@ everything_job = define_asset_job("every_dbt_asset_run", selection="*")
 def dagster_pipe():
 
     return with_resources(
-        dbt_assets,
+        dbt_assets + raw_data_assets,
         resource_defs={"dbt": dbt_cli_resource.configured(
                 {"project_dir": DBT_PROJECT_DIR, "profiles_dir": DBT_PROFILES_DIR}
             )  

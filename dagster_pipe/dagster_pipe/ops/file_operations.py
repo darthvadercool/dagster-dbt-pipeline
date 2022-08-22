@@ -15,6 +15,8 @@ def get_csv_path(context):
 	context.log.info(all_files[1])
 	return all_files[0], all_files[1]
 
+	
+
 @op(out={"table1": Out(is_required=True), "table2": Out(is_required=True)})
 def get_tablename(context):
 	path = r'/home/kshitij/Downloads/dataset/'

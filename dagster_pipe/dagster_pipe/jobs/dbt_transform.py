@@ -6,8 +6,6 @@ from dagster_pipe.ops.dbt import dbt_run
 
 
 
-
-
 @op(
     ins={"source1": In(Nothing), "source2": In(Nothing)},
     required_resource_keys={"dbt"},
